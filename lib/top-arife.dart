@@ -70,21 +70,43 @@ class _MyHomePageState extends State<MyHomePage> {
           children:[
             Image.asset('top-images/title.png'),
             SizedBox(
-              height:100,
+              height:80,
             ),
-            ElevatedButton(
-              onPressed: () {
-                //ボタンを押したときに実行する
-              },
-              child: Text("対戦開始"),
-              style: TextButton.styleFrom(
-                backgroundColor: Color(0xFFEC7254),
-                textStyle: const TextStyle(fontSize: 30),
-                foregroundColor: Colors.black, // foreground
-                fixedSize: Size(220, 80),
-                alignment: Alignment.center,
-              )
-            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      //ボタンを押したときに実行する
+                    },
+                    child: Text("ルームを作る"),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.black87,
+                      textStyle: const TextStyle(fontSize: 30),
+                      foregroundColor: Colors.white, // foreground
+                      fixedSize: Size(150, 150),
+                      alignment: Alignment.center,
+                    )
+                ),
+                SizedBox(
+                  width:50,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      //ボタンを押したときに実行する
+                    },
+                    child: Text("ルームに参加"),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.white70,
+                      textStyle: const TextStyle(fontSize: 30),
+                      foregroundColor: Colors.black, // foreground
+                      fixedSize: Size(150, 150),
+                      alignment: Alignment.center,
+                    )
+                ),
+              ],
+            )
+
 
            ] ,
         ),     
