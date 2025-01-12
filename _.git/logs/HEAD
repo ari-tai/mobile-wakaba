@@ -1,0 +1,18 @@
+0000000000000000000000000000000000000000 3f69fb77e077b23eba708b53e3ab6d9e7f86ae74 ari-tai <arizonotaito@outlook.jp> 1734604034 +0900	commit (initial): first commit
+3f69fb77e077b23eba708b53e3ab6d9e7f86ae74 0000000000000000000000000000000000000000 ari-tai <arizonotaito@outlook.jp> 1734604035 +0900	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 3f69fb77e077b23eba708b53e3ab6d9e7f86ae74 ari-tai <arizonotaito@outlook.jp> 1734604035 +0900	Branch: renamed refs/heads/master to refs/heads/main
+3f69fb77e077b23eba708b53e3ab6d9e7f86ae74 7897c7407372a2ffde758d4665106cc7b084a515 ari-tai <arizonotaito@outlook.jp> 1734604270 +0900	commit: flutter アプリ作成
+7897c7407372a2ffde758d4665106cc7b084a515 7897c7407372a2ffde758d4665106cc7b084a515 ari-tai <arizonotaito@outlook.jp> 1735624209 +0900	checkout: moving from main to top-arife
+7897c7407372a2ffde758d4665106cc7b084a515 a50bdf41be9b350d0b50a6fbe4234631ddc3450a ari-tai <arizonotaito@outlook.jp> 1735624640 +0900	commit: コピーしてみた（テスト）
+a50bdf41be9b350d0b50a6fbe4234631ddc3450a 7897c7407372a2ffde758d4665106cc7b084a515 ari-tai <arizonotaito@outlook.jp> 1735624752 +0900	checkout: moving from top-arife to main
+7897c7407372a2ffde758d4665106cc7b084a515 7897c7407372a2ffde758d4665106cc7b084a515 ari-tai <arizonotaito@outlook.jp> 1735624897 +0900	checkout: moving from main to test-main
+7897c7407372a2ffde758d4665106cc7b084a515 a50bdf41be9b350d0b50a6fbe4234631ddc3450a ari-tai <arizonotaito@outlook.jp> 1735625052 +0900	merge top-arife: Fast-forward
+a50bdf41be9b350d0b50a6fbe4234631ddc3450a a50bdf41be9b350d0b50a6fbe4234631ddc3450a ari-tai <arizonotaito@outlook.jp> 1735625306 +0900	checkout: moving from test-main to top-arife
+a50bdf41be9b350d0b50a6fbe4234631ddc3450a f8aad6a521b14a169624a92288aa530b03f52496 ari-tai <arizonotaito@outlook.jp> 1735807168 +0900	commit: テキスト変えてみた
+f8aad6a521b14a169624a92288aa530b03f52496 e23d807ca22ca52ebf20c759b37795550c531a58 ari-tai <arizonotaito@outlook.jp> 1735916245 +0900	commit: とりあえず完成
+e23d807ca22ca52ebf20c759b37795550c531a58 e23d807ca22ca52ebf20c759b37795550c531a58 ari-tai <arizonotaito@outlook.jp> 1735916285 +0900	checkout: moving from top-arife to top-arife
+e23d807ca22ca52ebf20c759b37795550c531a58 3c47711dc5ecc8989ee9114605a5b780fce8bfb6 ari-tai <arizonotaito@outlook.jp> 1735919225 +0900	commit: とりあえず完成
+3c47711dc5ecc8989ee9114605a5b780fce8bfb6 7897c7407372a2ffde758d4665106cc7b084a515 ari-tai <arizonotaito@outlook.jp> 1735919270 +0900	checkout: moving from top-arife to main
+7897c7407372a2ffde758d4665106cc7b084a515 3c47711dc5ecc8989ee9114605a5b780fce8bfb6 ari-tai <arizonotaito@outlook.jp> 1735919506 +0900	checkout: moving from main to top-arife
+3c47711dc5ecc8989ee9114605a5b780fce8bfb6 1b04b84248edd38cf5e3316db9a70c80f8f7649e ari-tai <arizonotaito@outlook.jp> 1736011757 +0900	commit: ボタンとタイトル完成
+1b04b84248edd38cf5e3316db9a70c80f8f7649e 1b04b84248edd38cf5e3316db9a70c80f8f7649e ari-tai <arizonotaito@outlook.jp> 1736420243 +0900	checkout: moving from top-arife to topID-arife
