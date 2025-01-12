@@ -8,27 +8,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
+        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -37,80 +24,174 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
+  
   final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
+
+class _MyHomePageState extends State<MyHomePage> {
+  late TextEditingController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  } @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
    
     return Scaffold(
 
-      body: Center(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-            Image.asset('top-images/title.png'),
-            SizedBox(
-              height:80,
+      body: Stack(
+        children: [
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('top-images/haikei.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              height: double.infinity,
+              width: double.infinity,
             ),
-            Row(
+          ),
+
+
+          Center(
+            child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      //ボタンを押したときに実行する
-                    },
-                    child: Text("ルームを作る"),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.black87,
-                      textStyle: const TextStyle(fontSize: 30),
-                      foregroundColor: Colors.white, // foreground
-                      fixedSize: Size(150, 150),
-                      alignment: Alignment.center,
-                    )
-                ),
+              children:[
+                Image.asset('top-images/title.png'),//タイトル画像
                 SizedBox(
-                  width:50,
+                  height:80,
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      //ボタンを押したときに実行する
-                    },
-                    child: Text("ルームに参加"),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.white70,
-                      textStyle: const TextStyle(fontSize: 30),
-                      foregroundColor: Colors.black, // foreground
-                      fixedSize: Size(150, 150),
-                      alignment: Alignment.center,
-                    )
-                ),
-              ],
-            )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(//ルームを作るボタン
+                        onPressed: () {
+                          showDialog(
+                            context:context,
+                            builder:(BuildContext context){
+                              return AlertDialog(
+                                title:Text('ルームID'),
+                                actions:<Widget>[
+                                  Center(
+                                    child:Text(
+                                      '37169',//ルームID表示
+                                      style: TextStyle(
+                                        fontSize: 30,
+                                        color:Colors.lightGreen,
+                                      ),
+                                    ) ,
+                                  )
+
+                                ]
+                              );
+
+                            },
+                          );
+                        },
+                        child: Text("ルームを作る"),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.black87,
+                          textStyle: const TextStyle(fontSize: 30),
+                          foregroundColor: Colors.white,
+                          fixedSize: Size(150, 150),
+                          alignment: Alignment.center,
+                        )
+                    ),
+                    SizedBox(
+                      width:50,
+                    ),
+                    ElevatedButton(//ルームを作成ボタン------------------------------------------------------------
+                        onPressed: () {
+                          showDialog(//ダイアログ
+                            context:context,
+                            builder:(BuildContext context){
+                              return AlertDialog(
+                                title:Text('ルームIDを入力'),
+                                actions:<Widget>[
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children:[
+                                      TextField(//ルームID入力フィールド
+                                        controller: _controller,
+                                        decoration: InputDecoration(
+                                          hintText: '5文字',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(10.0),
+                                            borderSide: BorderSide(
+                                              color: Colors.blue,
+                                              width: 2.0,
+                                            ),
+                                          ),
+                                          focusedBorder:  OutlineInputBorder(
+                                              borderRadius: BorderRadius.circular(10.0),
+                                              borderSide:  BorderSide(
+                                                color: Colors.blue,
+                                                width: 3.0,
+                                              )
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height:10,
+                                      ),
+                                      ElevatedButton(//参加ボタン
+                                        onPressed: (){
+                                          int? roomID = int.tryParse(_controller.text);//入力内容をint型に変換し変数roomIDに代入
+                                        },
+                                        child: Text('参加'),
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Colors.blue,
+                                          textStyle: const TextStyle(fontSize: 20),
+                                          foregroundColor: Colors.white,
+                                          fixedSize: Size(90, 20),
+                                          alignment: Alignment.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ]
+                              );
+
+                            },
+                          );
+                        },
+                        child: Text("ルームに参加"),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          textStyle: const TextStyle(fontSize: 30),
+                          foregroundColor: Colors.black, // foreground
+                          fixedSize: Size(150, 150),
+                          alignment: Alignment.center,
+                        )
+                    ),
+                  ],
+                )
 
 
-           ] ,
-        ),     
-      ),
+              ] ,
+            ),
+          ),
+        ],
+      )
+
       
     );
   }
